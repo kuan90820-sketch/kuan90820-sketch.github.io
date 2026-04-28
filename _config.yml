@@ -1,0 +1,26 @@
+title: "Wu Ching-kuan"
+description: "Economics student | Data analysis | Policy & market research"
+lang: zh-TW
+url: ""
+baseurl: ""
+author:
+  name: "Wu Ching-kuan"
+  email: "your-email@example.com"
+  github: "your-github"
+  linkedin: "your-linkedin"
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
