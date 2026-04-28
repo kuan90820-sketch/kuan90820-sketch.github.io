@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="eyebrow">Economics · Data Analysis · Policy & Market Research</p>
+  <h1>Hi, I’m Wu Ching-kuan.</h1>
+  <p class="lead">我用經濟學、資料分析與社會觀察理解問題，並將複雜議題轉化為清楚的研究、簡報與決策建議。</p>
+  <div class="hero-actions">
+    <a class="button" href="{{ '/projects/' | relative_url }}">View Projects</a>
+    <a class="button secondary" href="{{ '/resume/' | relative_url }}">View Resume</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Selected Projects</h2>
+  <div class="project-grid">
+    {% assign selected = site.projects | slice: 0, 3 %}
+    {% for project in selected %}
+      <a class="project-card" href="{{ project.url | relative_url }}">
+        <p class="eyebrow">{{ project.category }}</p>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section split">
+  <div>
+    <h2>What I Work On</h2>
+    <p>我的作品集中目前適合強調三條主線：資料分析與計量研究、政策與社會議題、產業與市場研究。</p>
+  </div>
+  <ul class="skill-list">
+    <li>Applied econometrics</li>
+    <li>Survey data cleaning</li>
+    <li>Market research</li>
+    <li>Policy analysis</li>
+    <li>Social impact measurement</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Recent Writing</h2>
+  {% for post in site.posts limit: 3 %}
+    <article class="post-list-item">
+      <p class="eyebrow">{{ post.date | date: "%Y.%m.%d" }}</p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    </article>
+  {% endfor %}
+</section>
